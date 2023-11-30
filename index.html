@@ -15,12 +15,13 @@
 
         // انتظار بضعة ثواني لضمان تحميل الصفحة
         setTimeout(function() {
-            // تحديد الحقل بناءً على مسار XPath
-            var emailInput = document.evaluate('//*[@id="identifierId"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            // تحديد الحقل بناءً على XPath الكامل
+            var emailInput = document.evaluate('/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
             // إذا تم العثور على العنصر، قم بتعبئة قيمة البريد الإلكتروني
             if (emailInput) {
                 emailInput.value = email;
+                emailInput.click(); // قم بالنقر على الحقل
             }
         }, 5000); // انتظار 5 ثوانٍ، يمكن تعديل هذا الوقت حسب الحاجة
     </script>

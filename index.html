@@ -6,9 +6,9 @@
     <title>Google Search</title>
 </head>
 <body>
-    <script>
-        // Perform a Google search for the word "قطة" (cat in Arabic)
-        window.location.href = "https://www.google.com/search?q=" + encodeURIComponent("قطة");
-    </script>
+    <form action="https://www.google.com/search" method="GET">
+        <input type="text" name="q" value="قطة">
+        <input type="submit" value="Search on Google">
+    </form>
 </body>
 </html>

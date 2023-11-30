@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gmail Login</title>
+    <title>Automated Login</title>
 </head>
 <body>
-    <form action="https://accounts.google.com/" method="post">
-        <label for="identifierId">Email:</label>
-        <input type="email" id="identifierId" name="identifier" value="saadane@gmail.com" required>
-        <input type="submit" value="Next">
-    </form>
+    <script>
+        // إيميل لتعبئته في حقل البريد الإلكتروني
+        var email = "saadane@gmail.com";
+
+        // فتح صفحة تسجيل الدخول لجوجل
+        window.location.href = "https://accounts.google.com/";
+
+        // انتظار بضعة ثواني لضمان تحميل الصفحة
+        setTimeout(function() {
+            // تحديد حقل البريد الإلكتروني وتعبئته بالإيميل المحدد
+            var emailInput = document.querySelector('input[type="email"]');
+            if (emailInput) {
+                emailInput.value = email;
+            }
+        }, 5000); // انتظار 5 ثواني، يمكن تعديل هذا الوقت حسب الحاجة
+    </script>
 </body>
 </html>

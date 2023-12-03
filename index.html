@@ -2,28 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automated Login</title>
+    <title>صفحة العرض</title>
 </head>
 <body>
-    <script>
-        // إيميل لتعبئته في حقل البريد الإلكتروني
-        var email = "saadane@gmail.com";
 
-        // فتح صفحة تسجيل الدخول لجوجل
-        window.location.href = "https://accounts.google.com/";
+    <h1>صفحة العرض</h1>
 
-        // انتظار بضعة ثواني لضمان تحميل الصفحة
-        setTimeout(function() {
-            // تحديد الحقل بناءً على XPath الكامل
-            var emailInput = document.evaluate('/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    <!-- استخدام العنصر iframe لتضمين محتوى خارجي -->
+    <iframe src="https://www.google.com" width="800" height="600" frameborder="0"></iframe>
 
-            // إذا تم العثور على العنصر، قم بتعبئة قيمة البريد الإلكتروني
-            if (emailInput) {
-                emailInput.value = email;
-                emailInput.click(); // قم بالنقر على الحقل
-            }
-        }, 5000); // انتظار 5 ثوانٍ، يمكن تعديل هذا الوقت حسب الحاجة
-    </script>
 </body>
 </html>
